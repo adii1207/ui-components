@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Myfeeds</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        .wrapper{
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex: 1;
+            position: relative;
+        }
+        /*Header portion*/
+        .header{
+            height: 50px;
+            width: 100%;
+            background-color: rgb(63, 92, 189);
+            position: fixed;
+            z-index: 1;
+        }
+        #text-header{
+            font-family: Helvetica;
+            color: white;
+            font-size: 25px;
+            font-weight: 600;
+            position: absolute;
+            left: 10%;
+            bottom: -25%;
+        }
+        #search-circle{
+            height: 60%;
+            width: 2%;
+            background-color: white;
+            position: absolute;
+            left: 20%;
+            top: 20%;
+            border-radius: 50%;
+            
+        }
+        #search-field{
+            position: absolute;
+            left: 23%;
+            top: 27%;
+            border: 0;
+            background: transparent;
+            outline: none;
+        }
+        ::placeholder{
+            color: white;
+        }
+        /*left portion*/
+        .wrap_left{
+            height: 1200px;
+            width: 20%;
+            background-color: #d3d8dd;
+            position: absolute;
+            left: 0;
+            top: 50px;
+        }
+        
+        .left-list{
+            list-style-type: none;
+            padding: 15%;
+        }
+        #left-item{
+            padding-top: 1%;
+            padding-left: 25%;
+        }
+        #left-heading{
+            margin-left: 50px;
+        }
+        #left-list-circle{
+            height: 2%;
+            width: 10%;
+            background-color: rgb(165, 160, 160);
+            position: absolute;
+            border-radius: 50%;
+            padding-top: 1%;
+            padding-bottom: 1%;
+            margin-top: 6%;
+        }
+        /*Middle portion*/
+        .wrap_middle{
+            height: 1200px;
+            width: 60%;
+            background-color:#d3d8dd;
+            position: absolute;
+            top: 50px;
+            left: 20%;
+            box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+        }
+        /*right portion*/
+        .wrap_right{
+            height: 800px;
+            width: 20%;
+            background-color: #cbccce;
+            position: fixed;
+            top: 50px;
+            right: 0;
+        }
+        #right-heading{
+            margin-top: 10%;
+            margin-left: 5%;
+        }
+        #right-list{
+            list-style-type: none;
+            padding: 20%;
+            margin-top: -25%;
+            margin-left: -5%;
+        }
+        #right-item{
+            padding: 10%;
+        }
+        #right-list-circle{
+            height: 2%;
+            width: 8%;
+            background-color: white;
+            position: absolute;
+            border-radius: 50%;
+            padding-top: 1%;
+            padding-bottom: 1%;
+            margin-top: 6%;
+            margin-left: -5%;
+        }
+        /*media query for responsiveness*/
+        /*mobile view*/
+        @media(max-width:440px){
+            #search-circle{
+                height: 50%;
+                width: 5%;
+                left: 60%;
+            }
+            #search-field{
+                left: 65%;
+            }
+            .wrap_left{
+                visibility: hidden;
+            }
+            .wrap_middle{
+                height: 1200px;
+                width: 100%;
+                left: 0;
+            }    
+            .wrap_right{
+                visibility: hidden;
+            }    
+        }
+        /*laptop view*/
+        @media(min-width:760px){
+            #search-circle{
+                width: 2.5%;
+                left: 30%;
+            }
+            #search-field{
+                left: 34%;
+            }
+            /*#left-list-circle{
+            height: 2%;
+            width: 12%;
+            background-color: rgb(165, 160, 160);
+            position: absolute;
+            border-radius: 50%;
+            padding-top: 1%;
+            padding-bottom: 1%;
+            margin-top: 13%;
+            }*/
+        }    
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="header">
+            <p id="text-header">facebook</p>
+            <div id="search-circle"></div>
+            <input type="search" placeholder="search" id="search-field">
+        </div>
+        <div class="wrap_left">
+            <h3 id="left-heading">My Facebook</h3>
+            <ul class="left-list">
+                <span id="left-list-circle"></span><li id="left-item"><h4>Luke skywalker</h4></li>
+                <span id="left-list-circle"></span><li id="left-item"><h4>News Feed</h4></li>
+                <span id="left-list-circle"></span><li id="left-item"><h4>Friends</h4></li>
+                <span id="left-list-circle"></span><li id="left-item"><h4>videos</h4></li>
+            </ul>
+            <h3 id="left-heading">Shortcuts</h3>
+            <ul class="left-list">
+                <span id="left-list-circle"></span><li id="left-item"><h4>Cartina-Mos Eisley</h4></li>
+                <span id="left-list-circle"></span><li id="left-item"><h4>Millenium Falcon</h4></li>
+                <span id="left-list-circle"></span><li id="left-item"><h4>Rebel base</h4></li>
+            </ul>
+            <h3 id="left-heading">Discover</h3>
+            <ul class="left-list">
+                <span id="left-list-circle"></span><li id="left-item"><h4>Marketplace</h4></li>
+                <span id="left-list-circle"></span><li id="left-item"><h4>Groups</h4></li>
+                <span id="left-list-circle"></span><li id="left-item"><h4>Pages</h4></li>
+                <span id="left-list-circle"></span><li id="left-item"><h4>events</h4></li>
+            </ul>
+        </div>
+        <div class="wrap_middle"></div>
+        <div class="wrap_right">
+            <h4 id="right-heading">Contacts</h4>
+            <ul id="right-list">
+                <span id="right-list-circle"></span><li id="right-item">Aditya</li>
+                <span id="right-list-circle"></span><li id="right-item">Aditya</li>
+                <span id="right-list-circle"></span><li id="right-item">Aditya</li>
+                <span id="right-list-circle"></span><li id="right-item">Aditya</li>
+                <span id="right-list-circle"></span><li id="right-item">Aditya</li>
+                <span id="right-list-circle"></span><li id="right-item">Aditya</li>
+                <span id="right-list-circle"></span><li id="right-item">Aditya</li>
+                <span id="right-list-circle"></span><li id="right-item">Aditya</li>
+                <span id="right-list-circle"></span><li id="right-item">Aditya</li>
+                <span id="right-list-circle"></span><li id="right-item">Aditya</li>            
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
