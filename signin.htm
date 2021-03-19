@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>enroll</title>
+    <style>
+        body{
+            background-color: rgb(4, 44, 59);
+        }
+        .sub_upper{
+            display: flex;
+            flex-shrink: 1;
+            position: absolute;
+            height:70%;
+            width: 25%;
+            background-color: whitesmoke;
+            left: 60%;
+            top: 15%;
+            justify-content: center;
+        }
+        .buttons{
+            position: absolute;
+            display: flex;
+            background: linear-gradient(to right, #2749b8,#021b07);
+            /* margin: 5% 20% 0 20%; */
+            box-shadow:0 .25vh 0.25vw .15vh  rgba(8, 71, 143, 0.938);
+            border-radius: 20px;
+            height: 9%;
+            width: 50%;
+            top: 5%;
+            justify-content: space-evenly;
+            justify-items: center;
+            text-align: center;
+        }
+        .togle-btn{
+            font-size: 120%;
+            padding:5%;
+            background: transparent;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 20px;
+            outline: none;
+            border: 0;
+        }
+        .sub_upper > .buttons> #btn{
+            display: flex; 
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-radius: 20px;
+            width: 50%;
+            height: 100%;
+            transition: 0.5s;
+            background-color: rgba(60, 156, 156, 0.4);
+        }
+        #login{
+            position: absolute;
+            width: 100%;
+            height: 80%;
+            top: 20%;
+        }
+        #register{
+            position: absolute;
+            width: 100%;
+            height: 80%;
+            top: 20%;
+            right: 100%;
+        }
+        #login > .input-details{
+            position: absolute;
+            /* display: flex;
+            flex-wrap:wrap; */
+            top: 20%;
+            width: 90%;
+            height: 80%;
+            justify-content: center;
+            margin-left: 5%;
+            margin-right: 5%;
+        }
+        #login > .input-details > .input-field{
+            position: absolute;
+            display: flex;
+            /* flex-wrap:wrap; */
+            border-top: 0;
+            border-left: 0;
+            border-right: 0;
+            background: transparent;
+            border-bottom: 10% solid #999;
+            /* text-decoration-color: #999; */
+            outline: none;
+            padding: 2% ;
+            /* margin: 0 5px 50px 5px; */
+            /* left: 0; */
+            width:100%; 
+        }
+        #login > .input-details > .checkbox{
+            position: absolute;
+            top: 50%;
+        }
+        #login > .input-details > .submit-btn{
+            position: absolute;
+            top: 60%;
+            left: 30%;
+            width:35% ;
+            padding: 5%;
+            border-radius: 20px;
+            font-weight: bold;
+            background: linear-gradient(to right, #2749b8,#021b07);
+         }
+         #login > .input-details > span{
+            position: absolute;
+            top: 50%;
+            left: 10%;
+         }
+         #register > .input-details{
+            position: absolute;
+            /* display: flex;
+            flex-wrap:wrap; */
+            top: 20%;
+            width: 90%;
+            height: 80%;
+            justify-content: center;
+            margin-left: 5%;
+            margin-right: 5%;
+        }
+        #register > .input-details > .input-field{
+            position: absolute;
+            display: flex;
+            /* flex-wrap:wrap; */
+            border-top: 0;
+            border-left: 0;
+            border-right: 0;
+            background: transparent;
+            border-bottom: 10% solid #999;
+            /* text-decoration-color: #999; */
+            outline: none;
+            padding: 5px ;
+            /* margin: 0 5px 50px 5px; */
+            /* left: 0; */
+            width:100%; 
+        }
+        #register > .input-details > .checkbox{
+            position: absolute;
+            top: 50%;
+        }
+        #register > .input-details > .submit-btn{
+            position: absolute;
+            top: 60%;
+            left: 30%;
+            width:35% ;
+            padding: 5%;
+            border-radius: 20px;
+            font-weight: bold;
+            background: linear-gradient(to right, #2749b8,#021b07);
+         }
+         #register > .input-details > span{
+            position: absolute;
+            top: 50%;
+            left: 10%;
+         }  
+        @media (max-width: 440px){
+            .sub_upper{
+                width: 80%;
+                left: 10%;
+            }
+        }
+        @media (min-width: 441px) and (max-width: 768px){
+            .sub_upper{
+                width: 50%;
+                left: 28%;
+                margin: 0 auto;
+                
+            }
+        }    
+        @media(min-width:769px){
+            /* .sub_upper{
+                width: 40%;
+                left: 50%;
+            } */
+        }
+    </style>
+</head>
+<body onload="myfunction()";>
+    <div class="sub_upper">
+        <div class="buttons">
+            <div id="btn"></div>
+            <button type="button" class="togle-btn" onclick="lgin()">login</button>
+            <button type="button" class="togle-btn" onclick="reg()">signup</button>
+        </div>
+        
+        <div id="login">
+            <form class="input-details" id="lgin">
+                <input type="text" class="input-field" placeholder="user Id" required> <br><br><br><br>
+                <input type="password" class="input-field" placeholder="password" required> <br>
+                <input type="checkbox" class="checkbox"><span>Remember Password</span> <br>
+                <button type="submit" class="submit-btn" >Log In</button>
+            </form>
+        </div>
+        <div id="register">
+            <form class="input-details" id="reg">
+                <input type="text" class="input-field" placeholder="user Id" required> <br><br><br>
+                <input type="password" class="input-field" placeholder="password" required> <br>
+                <input type="checkbox" class="checkbox"> <span>  I agree</span> 
+                <button type="submit" class="submit-btn" >Sign In</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        var x = document.getElementById("lgin");
+        var y = document.getElementById("reg");
+        var z = document.getElementById("btn");
+
+        function myfunction(){
+            y.style.display='none';
+        }
+
+        function reg(){
+            if (y.style.display=='none'){
+                y.style.display='block';
+                y.style.left='100%';
+            }
+            x.style.display='none';
+            z.style.left='50%';
+
+        }
+        function lgin(){
+            y.style.display='none';
+            x.style.display='block';
+            z.style.left='0';
+        }
+    </script> 
+</body>
+</html>
+          
